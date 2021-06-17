@@ -22,19 +22,21 @@ public class Triangle  {
     * @param cIn length of side 3.
     */
    public Triangle(double aIn, double bIn, double cIn) {
+      
+      if (aIn <= 0 || bIn <= 0 || cIn <= 0) {
+         throw new IllegalArgumentException("Sides: " + aIn + " " + bIn + " " + cIn
+            + " -- <replace this string>");       // add an explanation why this exception is being thrown.
+      }
+     
+      if ((aIn >= bIn + cIn) || (bIn >= aIn + cIn) || (cIn >= aIn + bIn)) {
+         throw new IllegalArgumentException("Sides: "
+            + aIn + " " + bIn + " " + cIn
+            + " -- <replace this string>");      // add an explanation why this exception is being thrown.
+      }
+     
       sideA = aIn;
       sideB = bIn;
       sideC = cIn;
-
-      if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
-         throw new IllegalArgumentException("Sides: " + sideA + " " + sideB + " " + sideC
-            + " -- <replace this string>");       // add an explanation why this exception is being thrown.
-      }
-      if ((sideA >= sideB + sideC) || (sideB >= sideA + sideC) || (sideC >= sideA + sideB)) {
-         throw new IllegalArgumentException("Sides: "
-            + sideA + " " + sideB + " " + sideC
-            + " -- <replace this string>");      // add an explanation why this exception is being thrown.
-      }
    }
 
    /**
